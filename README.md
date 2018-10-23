@@ -15,3 +15,9 @@ ambiguous (matches "iPhone Developer: *********@qq.com (LZ7VN9FRTQ)" and "iPhone
 
 ### 显示provision文件支持的device名称 
 当手机通过usb连接mac电脑时，对于每个provision文件，会显示出它所支持的设备名称，从而便于你选择使用哪个provision文件来签名，避免签名了无法安装在该手机上。
+
+
+### 过滤CSSMERR_TP_CERT_REVOKED的证书
+
+使用自己apple id的免费证书，多次使用后会存在CSSMERR_TP_CERT_REVOKED的证书，签名时将其过滤
+

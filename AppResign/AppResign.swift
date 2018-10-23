@@ -84,6 +84,9 @@ class AppResign {
         if securityResult.output.count >= 1 {
             var rawResult = securityResult.output.components(separatedBy: "\n")
             for index in stride(from: 0, through: rawResult.count - 2, by: 1) {
+                if (rawResult[index].contains("CSSMERR_TP_CERT_REVOKED")){
+                    continue
+                }
                 var cerStrArray = rawResult[index].components(separatedBy: "\"")
                 if(cerStrArray.count >= 2){
                     let id = cerStrArray[0].replacingOccurrences(of: " ", with: "").components(separatedBy: ")")[1]
